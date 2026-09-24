@@ -4,3 +4,8 @@ GET {{WebDiaryAPI_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{WebDiaryAPI_HostAddress}}/api/DiaryEntries
+Accept: application/json
+
+###
