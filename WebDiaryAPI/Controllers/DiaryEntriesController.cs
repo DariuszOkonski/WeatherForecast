@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebDiaryAPI.Data;
 using WebDiaryAPI.Models;
 
@@ -16,10 +17,22 @@ namespace WebDiaryAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<DiaryEntry> GetDiaryEntries()
+        public async Task<ActionResult<IEnumerable<DiaryEntry>>> GetDiaryEntries()
         {
+            return await _context.DiaryEntries.ToListAsync();
+        }
 
-            return _context.DiaryEntries.ToList();
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DiaryEntry>> GetDiaryEntryById(int id)
+        {
+            var diaryEntry = await _context.DiaryEntries.FindAsync(id);
+
+            if (diaryEntry == null)
+            {
+                return NotFound();
+            }
+
+            return diaryEntry;
         }
     }
 }
