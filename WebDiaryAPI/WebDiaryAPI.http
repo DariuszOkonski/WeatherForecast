@@ -13,3 +13,15 @@ Accept: application/json
 
 GET {{WebDiaryAPI_HostAddress}}/api/DiaryEntries/{{entryId}}
 Accept: application/json
+
+###
+
+POST {{WebDiaryAPI_HostAddress}}/api/DiaryEntries
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Sample entry title",
+  "content": "This is the content of the diary entry",
+  "created": "2026-09-28T12:00:00Z"
+}
