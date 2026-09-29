@@ -21,7 +21,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "title": "Sample entry title",
-  "content": "This is the content of the diary entry",
+  "title": "Sample entry title-222",
+  "content": "Some content - 222",
   "created": "2026-09-28T12:00:00Z"
 }

@@ -44,7 +44,10 @@ namespace WebDiaryAPI.Controllers
 
             await _context.SaveChangesAsync();
 
-            return Created("", diaryEntry);
+            // this part is for swagger
+            var resourceUrl = Url.Action(nameof(GetDiaryEntryById), new { id = diaryEntry.Id });
+
+            return Created(resourceUrl, diaryEntry);
         }
     }
 }
