@@ -1,5 +1,5 @@
 @WebDiaryAPI_HostAddress = http://localhost:5280
-@entryId = 2
+@entryId = 1011
 
 GET {{WebDiaryAPI_HostAddress}}/weatherforecast/
 Accept: application/json
@@ -23,5 +23,18 @@ Accept: application/json
 {
   "title": "Sample entry title-222",
   "content": "Some content - 222",
+  "created": "2026-09-28T12:00:00Z"
+}
+
+###
+
+PUT {{WebDiaryAPI_HostAddress}}/api/DiaryEntries/{{entryId}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": {{entryId}},
+  "title": "Updated title for entry {{entryId}}",
+  "content": "Updated content for entry {{entryId}}",
   "created": "2026-09-28T12:00:00Z"
 }
