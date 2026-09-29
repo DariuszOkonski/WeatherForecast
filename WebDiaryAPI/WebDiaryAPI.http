@@ -38,3 +38,8 @@ Accept: application/json
   "content": "Updated content for entry {{entryId}}",
   "created": "2026-09-28T12:00:00Z"
 }
+
+###
+
+DELETE {{WebDiaryAPI_HostAddress}}/api/DiaryEntries/{{entryId}}
+Accept: application/json
